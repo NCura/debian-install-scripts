@@ -10,11 +10,11 @@
 ```
 - Update && Upgrade
 ```bash
-  sudo nala upgrade
+  sudo nala upgrade -yy
 ```
 - Install git
 ```bash
-  sudo nala install git
+  sudo nala install git -yy
 ```
 - Configure dotfiles and execute install scripts
 ```bash
