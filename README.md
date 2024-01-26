@@ -6,11 +6,11 @@
 - Install Nala: 
 ```bash
   sudo apt install nala
-  nala fetch
+  sudo nala fetch
 ```
 - Update && Upgrade
 ```bash
-  sudo nala update && sudo nala upgrade
+  sudo nala upgrade
 ```
 - Install git
 ```bash
@@ -27,7 +27,7 @@
 ```bash
   cd ~/.local/share/ncura/dotfiles
   cat .bashrc > ~/.bashrc
-  cp .bashrc ~/
+  cp .bash_profile ~/
   cp -r .config ~/
   mkdir ~/.local/bin
   cp .local/bin/* ~/.local/bin/
