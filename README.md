@@ -16,33 +16,19 @@
 ```bash
   sudo nala install git
 ```
-- Clone repos
+- Configure dotfiles and execute install scripts
 ```bash
   mkdir -p ~/.local/share/ncura
   cd ~/.local/share/ncura
   git clone https://github.com/NCura/dotfiles
   git clone https://github.com/NCura/debian-install-scripts
-```
-- Handle dotfiles
-```bash
-  cd ~/.local/share/ncura/dotfiles
-  cat .bashrc > ~/.bashrc
-  cp .bash_profile ~/
-  cp -r .config ~/
-  mkdir ~/.local/bin
-  cp .local/bin/* ~/.local/bin/
-  mkdir ~/.local/share/wallpapers
-  cp .local/share/wallpapers/* ~/.local/share/wallpapers/
-```
-- Handle debian-install-scripts
-```bash
+
   cd ~/.local/share/ncura/debian-install-scripts
-  ./common-packages.sh
-  ./qtile.sh
-  ./zram.sh
-  ./flatpak.sh
-  ./nvidia.sh
-  reboot
+  chmod +x setup-dotfiles.sh
+  ./setup-dotfiles.sh
+
+  chmod +x install-all.sh
+  ./install-all.sh
 ```
 
 - After reboot:
