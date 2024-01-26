@@ -1,6 +1,17 @@
 #!/bin/bash
 
-sudo nala install neovim exa xwallpaper xdg-user-dirs pulsemixer pulseaudio alsa-utils -yy
-# make curl wget picom dunst sxiv firefox-esr
+nala_packages=(
+    neovim
+    exa
+    xwallpaper
+    xdg-user-dirs
+    pulsemixer
+    pulseaudio
+    alsa-utils
+    libavcodec-extra
+    # make curl wget picom dunst sxiv
+)
+
+sudo nala install "${nala_packages[@]}" -yy
 
 xdg-user-dirs-update
