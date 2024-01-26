@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo nala install zram-tools
+sudo nala install zram-tools -yy
 
 # Uncomment ALGO=lz4 (regardless of whether there's a space after #)
 sudo sed -i 's/# *ALGO=lz4/ALGO=lz4/' /etc/default/zramswap
