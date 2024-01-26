@@ -18,4 +18,4 @@ chmod +x nvidia.sh
 ./nvidia.sh
 
 echo "Installation complete. Rebooting now..."
-reboot
+sudo reboot
