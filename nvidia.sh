@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo nala install nvidia-driver nvidia-detect
+sudo nala install nvidia-driver nvidia-detect -yy
 
 RED='\033[0;31m'
 NC='\033[0m'
