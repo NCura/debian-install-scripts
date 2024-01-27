@@ -9,7 +9,11 @@ nala_packages=(
     pulseaudio
     alsa-utils
     libavcodec-extra
-    # make curl wget picom dunst sxiv
+    rofi
+    ranger
+    sxhkd
+    curl
+    # picom dunst sxiv
 )
 
 sudo nala install "${nala_packages[@]}" -yy
