@@ -18,6 +18,9 @@ cat .bashrc > "$HOME/.bashrc"
 # Copy .bash_profile to home directory
 cp .bash_profile "$HOME/"
 
+# Copy .xinitrc to home directory
+cp .xinitrc "$HOME/"
+
 # Copy .config directory
 cp -r .config "$HOME/"
 
