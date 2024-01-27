@@ -3,6 +3,12 @@
 - Do an expert installation
     - Use LVM
     - Don't use SWAP
+ 
+- Add root privilegies to user
+```bash
+  nano /etc/sudoers
+  # username ALL=(ALL:ALL) ALL
+```
 - Install Nala: 
 ```bash
   sudo apt install nala
