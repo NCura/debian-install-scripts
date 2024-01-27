@@ -21,3 +21,5 @@ nala_packages=(
 sudo nala install "${nala_packages[@]}" -yy
 
 xdg-user-dirs-update
+git config --global user.name "Nicolas Cura"
+git config --global user.email "nicolas.cura@icloud.com"
