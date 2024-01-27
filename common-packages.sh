@@ -13,6 +13,7 @@ nala_packages=(
     ranger
     sxhkd
     curl
+    ueberzug
     # picom dunst sxiv
 )
 
