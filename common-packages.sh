@@ -14,7 +14,8 @@ nala_packages=(
     sxhkd
     curl
     ueberzug
-    # picom dunst sxiv
+    picom
+    # dunst sxiv
 )
 
 sudo nala install "${nala_packages[@]}" -yy
