@@ -9,6 +9,19 @@
   nano /etc/sudoers
   # username ALL=(ALL:ALL) ALL
 ```
+- Enable autologin (optional)
+```bash
+  sudo systemctl edit getty@tty1
+
+  # Add the following lines to the file:
+  [Service]
+  ExecStart=
+  ExecStart=-/sbin/agetty --autologin nicolas --noclear %I $TERM
+  Type=idle
+
+  # Reboot
+  sudo systemctl enable getty@tty1
+```
 - Install Nala: 
 ```bash
   sudo apt install nala
