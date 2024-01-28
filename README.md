@@ -11,7 +11,8 @@
 ```
 - Enable autologin (optional)
 ```bash
-  sudo systemctl edit getty@tty1
+  sudo mkdir -p /etc/systemd/system/getty@tty1.service.d/
+  sudo nano /etc/systemd/system/getty@tty1.service.d/override.conf
 
   # Add the following lines to the file:
   [Service]
@@ -19,8 +20,8 @@
   ExecStart=-/sbin/agetty --autologin nicolas --noclear %I $TERM
   Type=idle
 
-  # Reboot
-  sudo systemctl enable getty@tty1
+  sudo systemctl daemon-reload
+  sudo systemctl restart getty@tty1
 ```
 - Install Nala: 
 ```bash
