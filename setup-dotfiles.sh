@@ -31,4 +31,7 @@ cp -r .local/bin/* "$HOME/.local/bin/"
 mkdir -p "$HOME/.local/share/wallpapers"
 cp -r .local/share/wallpapers/* "$HOME/.local/share/wallpapers/"
 
+mkdir -p "$HOME/.local/share/fonts"
+cp -r .local/share/fonts/* "$HOME/.local/share/fonts/"
+
 echo "Dotfiles setup complete."
