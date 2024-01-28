@@ -40,6 +40,12 @@
 ```bash
   mkdir -p ~/.local/share/ncura
   cd ~/.local/share/ncura
+
+  # Use SSH
+  git clone git@github.com:NCura/dotfiles.git
+  git clone git@github.com:NCura/debian-install-scripts.git
+
+  # Use HTTPS
   git clone https://github.com/NCura/dotfiles
   git clone https://github.com/NCura/debian-install-scripts
 
