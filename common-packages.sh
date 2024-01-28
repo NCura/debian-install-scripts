@@ -15,6 +15,7 @@ nala_packages=(
     curl
     ueberzug
     picom
+    zip
     # dunst sxiv
 )
 
