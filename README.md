@@ -50,10 +50,7 @@
   git clone https://github.com/NCura/debian-install-scripts
 
   cd ~/.local/share/ncura/debian-install-scripts
-  chmod +x setup-dotfiles.sh
   ./setup-dotfiles.sh
-
-  chmod +x install-all.sh
   ./install-all.sh
 ```
 
