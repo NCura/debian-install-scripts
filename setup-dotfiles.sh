@@ -9,29 +9,30 @@ if [ ! -d "$dotfiles_dir" ]; then
     exit 1
 fi
 
-# Change to the dotfiles directory
-cd "$dotfiles_dir"
+# Symlink .bashrc, .bash_profile, .xinitrc to home directory
+ln -sf "$dotfiles_dir/.bashrc" "$HOME/.bashrc"
+ln -sf "$dotfiles_dir/.bash_profile" "$HOME/.bash_profile"
+ln -sf "$dotfiles_dir/.xinitrc" "$HOME/.xinitrc"
 
-# Copy .bashrc to home directory
-cat .bashrc > "$HOME/.bashrc"
+# Create .config directory if it does not exist
+mkdir -p "$HOME/.config"
 
-# Copy .bash_profile to home directory
-cp .bash_profile "$HOME/"
+# Symlink individual config directories and files
+ln -sf "$dotfiles_dir/.config/kitty" "$HOME/.config/kitty"
+ln -sf "$dotfiles_dir/.config/nvim" "$HOME/.config/nvim"
+ln -sf "$dotfiles_dir/.config/qtile" "$HOME/.config/qtile"
+ln -sf "$dotfiles_dir/.config/ranger" "$HOME/.config/ranger"
+ln -sf "$dotfiles_dir/.config/x11" "$HOME/.config/x11"
+ln -sf "$dotfiles_dir/.config/aliasrc" "$HOME/.config/aliasrc"
 
-# Copy .xinitrc to home directory
-cp .xinitrc "$HOME/"
-
-# Copy .config directory
-cp -r .config "$HOME/"
-
-# Create directories if they do not exist and copy files
+# Copy .local/bin, .local/share/wallpapers, .local/share/fonts
 mkdir -p "$HOME/.local/bin"
-cp -r .local/bin/* "$HOME/.local/bin/"
+cp -r "$dotfiles_dir/.local/bin/"* "$HOME/.local/bin/"
 
 mkdir -p "$HOME/.local/share/wallpapers"
-cp -r .local/share/wallpapers/* "$HOME/.local/share/wallpapers/"
+cp -r "$dotfiles_dir/.local/share/wallpapers/"* "$HOME/.local/share/wallpapers/"
 
 mkdir -p "$HOME/.local/share/fonts"
-cp -r .local/share/fonts/* "$HOME/.local/share/fonts/"
+cp -r "$dotfiles_dir/.local/share/fonts/"* "$HOME/.local/share/fonts/"
 
-echo "Dotfiles setup complete."
+echo "Dotfiles symlink setup complete."
