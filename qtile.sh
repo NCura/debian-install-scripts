@@ -1,8 +1,4 @@
 #!/bin/bash
-# declare colors
-red='\033[0;31m'
-nc='\033[0m'
-yellow='\033[0;33m'
 
 #directories
 qtilevenv="$HOME/.local/src/qtile_venv"
@@ -22,17 +18,21 @@ git clone https://github.com/qtile/qtile.git $qtilevenv/qtile
 
 $qtilevenv/bin/pip install $qtilevenv/qtile/.
 
+RED='\033[0;31m'
+NC='\033[0m'
+YELLOW='\033[0;33m'
+
 if [ -e "$qtileconfigdir"/config.py ]; then 
 	echo ""
-	printf ${red}" NOTE:    ${yellow}using your existing config.py ${nc}\n"
+	echo -e "${RED}NOTE: ${yellow}using your existing config.py${NC}"
 	echo ""
 else 
 	mkdir $qtileconfigdir
 	cp $qtilevenv/qtile/libqtile/resources/default_config.py $qtileconfigdir/config.py
 	echo ""
-	printf ${red}" NOTE:    ${yellow}copied default qtile config to $qtileconfigdir${nc}\n"
+	echo -e "${RED}NOTE: ${yellow}copied default qtile config to $qtileconfigdir${NC}"
 	echo ""
 fi 
 
 ln -sf $qtilevenv/bin/qtile $bindir && \
-printf ${red}"Please REBOOT\n${nc} \n"
+echo -e "${RED}Please reboot your system to apply changes.${NC}"
