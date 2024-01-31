@@ -3,6 +3,7 @@
 nala_packages=(
     neovim
     exa
+    kitty
     xwallpaper
     xdg-user-dirs
     pulsemixer
@@ -16,6 +17,11 @@ nala_packages=(
     ueberzug
     picom
     zip
+    unzip
+    micro
+    bluetooth
+    pulseaudio-module-bluetooth
+    # keynav
     # dunst sxiv
 )
 
