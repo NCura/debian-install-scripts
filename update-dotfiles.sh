@@ -20,13 +20,25 @@ cp "$HOME/.config/x11/xprofile" "$dotfiles_dir/.config/x11/xprofile"
 # Change to the dotfiles directory
 cd "$dotfiles_dir"
 
+# Check if SSH agent is running, start it if not
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    eval "$(ssh-agent -s)"
+fi
+
+# Add SSH key for GitHub, if not already added
+ssh_key="$HOME/.ssh/github"
+if ! ssh-add -l | grep -q "$ssh_key"; then
+    ssh-add "$ssh_key"
+fi
+
 # Stage all changes
 git add .
 
-# Commit the changes
-git commit -m "Updated dotfiles"
+# Commit the changes with an optional custom message
+commit_message="${1:-Updated dotfiles}"
+git commit -m "$commit_message"
 
 # Push the changes to GitHub
 git push origin main
 
-echo "Dotfiles updated and pushed to GitHub."
+echo "Dotfiles updated and pushed to GitHub with message: $commit_message"
