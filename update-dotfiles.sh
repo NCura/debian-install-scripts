@@ -9,16 +9,23 @@ if [ ! -d "$dotfiles_dir" ]; then
     exit 1
 fi
 
-# Copy updated files from home directory to dotfiles directory
-cp "$HOME/.bashrc" "$dotfiles_dir/"
-cp "$HOME/.bash_profile" "$dotfiles_dir/"
-cp "$HOME/.config/aliasrc" "$dotfiles_dir/.config/"
-cp "$HOME/.config/kitty/kitty.conf" "$dotfiles_dir/.config/kitty/kitty.conf"
-cp "$HOME/.config/qtile/config.py" "$dotfiles_dir/.config/qtile/config.py"
-cp "$HOME/.config/x11/xprofile" "$dotfiles_dir/.config/x11/xprofile"
-
 # Change to the dotfiles directory
 cd "$dotfiles_dir"
+
+# Fetch latest commit information from remote
+git fetch
+
+# Get the latest commit hash of the remote main branch
+remote_commit=$(git rev-parse origin/main)
+
+# Get the latest commit hash of the local main branch
+local_commit=$(git rev-parse main)
+
+# Compare local and remote commits
+if [ "$local_commit" != "$remote_commit" ]; then
+    echo "Local and remote repositories are not in sync. Please pull changes before pushing."
+    exit 1
+fi
 
 # Check if SSH agent is running, start it if not
 if ! pgrep -u "$USER" ssh-agent > /dev/null; then
