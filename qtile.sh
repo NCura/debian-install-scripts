@@ -9,7 +9,7 @@ qtilevenv="$HOME/.local/src/qtile_venv"
 bindir="$HOME/.local/bin"
 qtileconfigdir="$HOME/.config/qtile"
 
-sudo nala update -yy
+sudo nala upgrade
 
 sudo nala install xorg xserver-xorg python3 python3-pip python3-venv python3-v-sim python-dbus-dev \
     libpangocairo-1.0-0 python3-xcffib python3-cairocffi libxkbcommon-dev libxkbcommon-x11-dev -yy
