@@ -22,7 +22,6 @@ ln -sf "$dotfiles_dir/.config/kitty" "$HOME/.config/kitty"
 ln -sf "$dotfiles_dir/.config/nvim" "$HOME/.config/nvim"
 ln -sf "$dotfiles_dir/.config/qtile" "$HOME/.config/qtile"
 ln -sf "$dotfiles_dir/.config/ranger" "$HOME/.config/ranger"
-ln -sf "$dotfiles_dir/.config/x11" "$HOME/.config/x11"
 ln -sf "$dotfiles_dir/.config/aliasrc" "$HOME/.config/aliasrc"
 
 # Copy .local/bin, .local/share/wallpapers, .local/share/fonts
