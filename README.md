@@ -68,3 +68,23 @@
   sudo systemctl daemon-reload
   sudo systemctl restart getty@tty1
 ```
+
+- Bluetooth
+```bash
+  # Install bluez bluez-utils
+  # lsmod | grep btusb
+  sudo systemctl enable bluetooth.service
+  sudo systemctl start bluetooth.service
+  bluetoothctl
+  power on
+  agent on
+  default-agent
+  scan on
+  trust XX:...
+  pair ...
+  connect ...
+  scan off
+  sudo nvim /etc/bluetooth/main.conf
+  # Set AutoEnable=true
+  # For audio, add pulseaudio-bluetooth/pipewire-pulse
+```
